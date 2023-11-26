@@ -14,11 +14,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(taskList.tasks) { task in
-                        Text(task.name)
+                if taskList.tasks.isEmpty {
+                    Spacer()
+                    Text("No tasks yet. Add a new task!")
+                        .foregroundColor(.gray)
+                        .padding()
+                    Spacer()
+                } else {
+                    List {
+                        ForEach(taskList.tasks) { task in
+                            Text(task.name)
+                        }
+                        .onDelete(perform: taskList.handleRemoveTask)
                     }
-                    .onDelete(perform: taskList.handleRemoveTask)
                 }
 
                 HStack {
@@ -33,7 +41,8 @@ struct ContentView: View {
                     }
                 }.padding()
             }
-            .navigationBarTitle("Todo List")
+            .navigationBarTitle("Todo for You")
+            .background(Color(UIColor.systemGray6))
         }
     }
 }
