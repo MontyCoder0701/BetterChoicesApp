@@ -17,6 +17,8 @@
 		32F7FEB32B12FBFD00F9722C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FEB22B12FBFD00F9722C /* .gitignore */; };
 		32F7FEB42B12FBFD00F9722C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FEB22B12FBFD00F9722C /* .gitignore */; };
 		32F7FEB52B12FBFD00F9722C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FEB22B12FBFD00F9722C /* .gitignore */; };
+		32F7FEB72B13035200F9722C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FEB62B13035200F9722C /* Task.swift */; };
+		32F7FEB92B13039A00F9722C /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FEB82B13039A00F9722C /* TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		32F7FE9F2B12FB4C00F9722C /* FAFOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOUITests.swift; sourceTree = "<group>"; };
 		32F7FEA12B12FB4C00F9722C /* FAFOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32F7FEB22B12FBFD00F9722C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		32F7FEB62B13035200F9722C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		32F7FEB82B13039A00F9722C /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		32F7FE832B12FB4B00F9722C /* FAFO */ = {
 			isa = PBXGroup;
 			children = (
+				32F7FEB62B13035200F9722C /* Task.swift */,
+				32F7FEB82B13039A00F9722C /* TaskList.swift */,
 				32F7FE842B12FB4B00F9722C /* FAFOApp.swift */,
 				32F7FE862B12FB4B00F9722C /* ContentView.swift */,
 				32F7FE882B12FB4C00F9722C /* Assets.xcassets */,
@@ -265,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F7FEB92B13039A00F9722C /* TaskList.swift in Sources */,
 				32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */,
+				32F7FEB72B13035200F9722C /* Task.swift in Sources */,
 				32F7FE852B12FB4B00F9722C /* FAFOApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

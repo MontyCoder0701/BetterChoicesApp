@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var newTaskName = ""
+    @ObservedObject var taskList = TaskList()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(taskList.tasks) { task in
+                        Text(task.name)
+                    }
+                    .onDelete(perform: taskList.handleRemoveTask)
+                }
+
+                HStack {
+                    TextField("New", text: $newTaskName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                    Button(action: {
+                        taskList.handleAddTask(name: newTaskName)
+                        newTaskName = ""
+                    }) {
+                        Text("Add")
+                    }
+                }.padding()
+            }
+            .navigationBarTitle("Todo List")
         }
-        .padding()
     }
 }
 
