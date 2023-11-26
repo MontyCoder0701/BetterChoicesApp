@@ -11,7 +11,7 @@ class TaskList: ObservableObject {
     @Published var tasks: [Task] = []
     
     init() {
-        loadTasks()
+        setupTasks()
     }
     
     func handleAddTask(name: String) {
@@ -40,7 +40,7 @@ class TaskList: ObservableObject {
     }
 
     
-    private func loadTasks() {
+    private func setupTasks() {
             if let data = UserDefaults.standard.data(forKey: "tasks") {
                 do {
                     let decoder = JSONDecoder()
