@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Task: Identifiable {
+struct Task: Identifiable, Codable {
     var id = UUID()
     var name: String
 }
