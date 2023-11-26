@@ -22,14 +22,14 @@ struct ContentView: View {
                 }
 
                 HStack {
-                    TextField("New", text: $newTaskName)
+                    TextField("New todo", text: $newTaskName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
 
                     Button(action: {
                         taskList.handleAddTask(name: newTaskName)
                         newTaskName = ""
                     }) {
-                        Text("Add")
+                        Image(systemName: "plus.circle.fill")
                     }
                 }.padding()
             }
