@@ -13,12 +13,15 @@ struct ContentView: View {
     @State private var newCon = ""
     @State private var newDesire = ""
     @State private var newHappen = ""
+    
     @ObservedObject var taskList = TaskList()
     @ObservedObject var proConList = ProConList()
     @ObservedObject var desireList = DesireList()
+    
     @State private var showingAddTaskView = false
     @State private var showingAddProConView = false
     @State private var showingAddDesireHappenView = false
+    
     @State private var selectedTask: Task?
 
     var body: some View {
