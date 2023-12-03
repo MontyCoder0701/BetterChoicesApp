@@ -31,7 +31,7 @@ struct AddDesireHappenView: View {
                     newDesire = selectedDesireHappen?.components(separatedBy: " - ").first ?? ""
                 }
 
-            Text("Can I achive this with my impulse?")
+            Text("Is this achievable?")
                 .font(.headline)
                 .bold()
             TextEditor(text: $newHappen)
@@ -45,7 +45,7 @@ struct AddDesireHappenView: View {
         }
         .onDisappear {
             if let selectedDesireHappen = selectedDesireHappen {
-                desireList.updateDesireHappen(selectedDesireHappen, newDesire: newDesire, newHappen: newHappen)
+                desireList.handleUpdateDesireHappen(selectedDesireHappen, newDesire: newDesire, newHappen: newHappen)
             } else {
                 desireList.addDesireHappen(desire: newDesire, happen: newHappen)
             }

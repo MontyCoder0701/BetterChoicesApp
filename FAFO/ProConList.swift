@@ -38,12 +38,13 @@ class ProConList: ObservableObject {
         saveProConList()
     }
     
-    func updateProCon(_ oldProCon: String, newPro: String, newCon: String) {
+    func handleUpdateProCon(_ oldProCon: String, newPro: String, newCon: String) {
         guard let index = prosAndCons.firstIndex(of: oldProCon) else {
             return
         }
 
         prosAndCons.remove(at: index)
+        
         let updatedProCon = formatProConString(pro: newPro, con: newCon)
         prosAndCons.insert(updatedProCon, at: index)
         

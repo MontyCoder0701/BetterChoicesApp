@@ -32,7 +32,7 @@ struct AddTaskView: View {
         .navigationBarTitle(selectedTask != nil ? "Edit Entry" : "")
         .onDisappear{
             if let task = selectedTask {
-                taskList.updateTask(task: task, newName: newTaskName)
+                taskList.handleUpdateTask(task: task, newName: newTaskName)
             } else {
                 taskList.handleAddTask(name: newTaskName)
             }

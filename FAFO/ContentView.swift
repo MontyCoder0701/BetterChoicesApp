@@ -47,7 +47,8 @@ struct ContentView: View {
                             SummaryRowView(text: desireHappen)
                         }
                     }
-                    .onDelete(perform: proConList.handleRemoveProCon)
+                    .onDelete(perform: desireList.handleRemoveDesireHappen
+                    )
                 }
             
             
@@ -74,14 +75,14 @@ struct ContentView: View {
                     Button(action: {
                        showingAddDesireHappenView.toggle()
                    }) {
-                       Image(systemName: "heart.slash")
+                       Image(systemName: "questionmark.bubble")
                    }
                    .sheet(isPresented: $showingAddDesireHappenView) {
                        AddDesireHappenView(newDesire: $newDesire, newHappen: $newHappen, desireList: desireList)
                    }
                 }.padding()
             }
-            .navigationBarTitle("My BPD Journal ❤️‍🩹")
+            .navigationBarTitle("My BPD Journal")
             .background(Color(UIColor.systemGray6))
         }
     }

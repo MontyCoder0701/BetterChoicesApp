@@ -38,12 +38,13 @@ class DesireList: ObservableObject {
         saveDesireList()
     }
     
-    func updateDesireHappen(_ oldDesireHappen: String, newDesire: String, newHappen: String) {
+    func handleUpdateDesireHappen(_ oldDesireHappen: String, newDesire: String, newHappen: String) {
         guard let index = DesiresAndHappens.firstIndex(of: oldDesireHappen) else {
             return
         }
 
         DesiresAndHappens.remove(at: index)
+        
         let updatedDesireHappen = formatDesireHappenString(desire: newDesire, happen: newHappen)
         DesiresAndHappens.insert(updatedDesireHappen, at: index)
         

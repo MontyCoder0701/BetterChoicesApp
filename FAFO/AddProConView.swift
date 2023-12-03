@@ -45,7 +45,7 @@ struct AddProConView: View {
         }
         .onDisappear {
             if let selectedProCon = selectedProCon {
-                proConList.updateProCon(selectedProCon, newPro: newPro, newCon: newCon)
+                proConList.handleUpdateProCon(selectedProCon, newPro: newPro, newCon: newCon)
             } else {
                 proConList.addProCon(pro: newPro, con: newCon)
             }

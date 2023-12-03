@@ -29,7 +29,7 @@ class TaskList: ObservableObject {
         saveTasks()
     }
     
-    func updateTask(task: Task, newName: String) {
+    func handleUpdateTask(task: Task, newName: String) {
         guard let index = tasks.firstIndex(where: { $0.id == task.id }) else {
             return
         }
