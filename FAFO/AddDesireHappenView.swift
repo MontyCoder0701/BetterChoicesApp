@@ -1,5 +1,5 @@
 //
-//  AddProConView.swift
+//  AddDesireHappenView.swift
 //  FAFO
 //
 //  Created by Soojeong Lee on 12/3/23.
@@ -8,49 +8,49 @@
 import Foundation
 import SwiftUI
 
-struct AddProConView: View {
-    @Binding var newPro: String
-    @Binding var newCon: String
-    @ObservedObject var proConList: ProConList
+struct AddDesireHappenView: View {
+    @Binding var newDesire: String
+    @Binding var newHappen: String
+    @ObservedObject var desireList: DesireList
     @Environment(\.presentationMode) var presentationMode
 
-    var selectedProCon: String?
+    var selectedDesireHappen: String?
 
     var body: some View {
         VStack {
             Spacer()
-            Text("Pros")
+            Text("What do I really want?")
                 .font(.headline)
                 .bold()
-            TextEditor(text: $newPro)
+            TextEditor(text: $newDesire)
                 .frame(minHeight: 100)
                 .padding()
                 .background(Color(UIColor.systemGray6))
                 .cornerRadius(8)
                 .onAppear {
-                    newPro = selectedProCon?.components(separatedBy: " - ").first ?? ""
+                    newDesire = selectedDesireHappen?.components(separatedBy: " - ").first ?? ""
                 }
 
-            Text("Cons")
+            Text("Can I achive this with my impulse?")
                 .font(.headline)
                 .bold()
-            TextEditor(text: $newCon)
+            TextEditor(text: $newHappen)
                 .frame(minHeight: 100)
                 .padding()
                 .background(Color(UIColor.systemGray6))
                 .cornerRadius(8)
                 .onAppear {
-                    newCon = selectedProCon?.components(separatedBy: " - ").last ?? ""
+                    newHappen = selectedDesireHappen?.components(separatedBy: " - ").last ?? ""
                 }
         }
         .onDisappear {
-            if let selectedProCon = selectedProCon {
-                proConList.updateProCon(selectedProCon, newPro: newPro, newCon: newCon)
+            if let selectedDesireHappen = selectedDesireHappen {
+                desireList.updateDesireHappen(selectedDesireHappen, newDesire: newDesire, newHappen: newHappen)
             } else {
-                proConList.addProCon(pro: newPro, con: newCon)
+                desireList.addDesireHappen(desire: newDesire, happen: newHappen)
             }
-            newPro = ""
-            newCon = ""
+            newDesire = ""
+            newHappen = ""
             presentationMode.wrappedValue.dismiss()
         }
         .gesture(DragGesture().onEnded { value in

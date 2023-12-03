@@ -28,20 +28,22 @@ struct AddTaskView: View {
                 .onAppear {
                     newTaskName = selectedTask?.name ?? ""
                 }
-
-            Button(action: {
-                if let task = selectedTask {
-                    taskList.updateTask(task: task, newName: newTaskName)
-                } else {
-                    taskList.handleAddTask(name: newTaskName)
-                }
-                newTaskName = ""
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "plus.circle.fill")
-                    .padding()
-            }
         }
         .navigationBarTitle(selectedTask != nil ? "Edit Entry" : "")
+        .onDisappear{
+            if let task = selectedTask {
+                taskList.updateTask(task: task, newName: newTaskName)
+            } else {
+                taskList.handleAddTask(name: newTaskName)
+            }
+            newTaskName = ""
+            presentationMode.wrappedValue.dismiss()
+        }
+        .gesture(DragGesture().onEnded { value in
+            if value.translation.width > 50 {
+                presentationMode.wrappedValue.dismiss()
+            }
+        })
+        .navigationBarHidden(true)
     }
 }
