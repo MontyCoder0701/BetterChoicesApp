@@ -16,6 +16,10 @@ struct AddTaskView: View {
 
     var body: some View {
         VStack {
+            Spacer()
+            Text("Journal")
+                .font(.headline)
+                .bold()
             TextEditor(text: $newTaskName)
                 .frame(minHeight: 100)
                 .padding()
@@ -38,6 +42,6 @@ struct AddTaskView: View {
                     .padding()
             }
         }
-        .navigationBarTitle(selectedTask != nil ? "Edit Memo" : "Add Memo")
+        .navigationBarTitle(selectedTask != nil ? "Edit Entry" : "")
     }
 }

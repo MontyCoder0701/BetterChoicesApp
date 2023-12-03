@@ -18,7 +18,10 @@ struct AddProConView: View {
 
     var body: some View {
         VStack {
+            Spacer()
             Text("Pros")
+                .font(.headline)
+                .bold()
             TextEditor(text: $newPro)
                 .frame(minHeight: 100)
                 .padding()
@@ -29,6 +32,8 @@ struct AddProConView: View {
                 }
 
             Text("Cons")
+                .font(.headline)
+                .bold()
             TextEditor(text: $newCon)
                 .frame(minHeight: 100)
                 .padding()
@@ -52,6 +57,6 @@ struct AddProConView: View {
                     .padding()
             }
         }
-        .navigationBarTitle(selectedProCon != nil ? "Edit Pros and Cons" : "Add Pros and Cons")
+        .navigationBarTitle(selectedProCon != nil ? "Edit Entry" : "")
     }
 }

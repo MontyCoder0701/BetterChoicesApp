@@ -58,9 +58,12 @@ struct ContentView: View {
                    }
                 }.padding()
             }
-            .navigationBarTitle("Todo for Sue")
+            .navigationBarTitle("My Journal")
             .background(Color(UIColor.systemGray6))
         }
     }
 }
 
+#Preview {
+    ContentView()
+}

@@ -29,6 +29,15 @@ class TaskList: ObservableObject {
         saveTasks()
     }
     
+    func updateTask(task: Task, newName: String) {
+        guard let index = tasks.firstIndex(where: { $0.id == task.id }) else {
+            return
+        }
+
+        tasks[index].name = newName
+        saveTasks()
+    }
+    
     private func saveTasks() {
         do {
             let encoder = JSONEncoder()
@@ -39,24 +48,14 @@ class TaskList: ObservableObject {
         }
     }
     
-    func updateTask(task: Task, newName: String) {
-        guard let index = tasks.firstIndex(where: { $0.id == task.id }) else {
-            return
-        }
-
-        tasks[index].name = newName
-        saveTasks()
-    }
-
-    
     private func setupTasks() {
-            if let data = UserDefaults.standard.data(forKey: "tasks") {
-                do {
-                    let decoder = JSONDecoder()
-                    tasks = try decoder.decode([Task].self, from: data)
-                } catch {
-                    print("Error decoding tasks")
-                }
+        if let data = UserDefaults.standard.data(forKey: "tasks") {
+            do {
+                let decoder = JSONDecoder()
+                tasks = try decoder.decode([Task].self, from: data)
+            } catch {
+                print("Error decoding tasks")
             }
         }
+    }
 }

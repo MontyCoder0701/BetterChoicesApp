@@ -17,6 +17,10 @@ class ProConList: ObservableObject {
     }
 
     func addProCon(pro: String, con: String) {
+        if (pro.isEmpty && con.isEmpty) {
+            return;
+        }
+        
         pros.append(pro)
         cons.append(con)
         
