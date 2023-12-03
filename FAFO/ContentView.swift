@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var newTaskName = ""
+    @State private var newPro = ""
+    @State private var newCon = ""
     @ObservedObject var taskList = TaskList()
+    @ObservedObject var proConList = ProConList()
     @State private var showingAddTaskView = false
+    @State private var showingAddProConView = false
     @State private var selectedTask: Task?
 
     var body: some View {
@@ -23,7 +27,15 @@ struct ContentView: View {
                         }
                     }
                     .onDelete(perform: taskList.handleRemoveTask)
+                    
+                    ForEach(proConList.prosAndCons, id: \.self) { proCon in
+                        NavigationLink(destination: AddProConView(newPro: $newPro, newCon: $newCon, proConList: proConList, selectedProCon: proCon)) {
+                            Text(proCon)
+                        }
+                    }
+                    .onDelete(perform: proConList.handleRemoveProCon)
                 }
+            
             
                 HStack {
                     Button(action: {
@@ -35,6 +47,15 @@ struct ContentView: View {
                     .sheet(isPresented: $showingAddTaskView) {
                         AddTaskView(newTaskName: $newTaskName, taskList: taskList, selectedTask: nil)
                     }
+                    
+                    Button(action: {
+                       showingAddProConView.toggle()
+                   }) {
+                       Image(systemName: "list.bullet")
+                   }
+                   .sheet(isPresented: $showingAddProConView) {
+                       AddProConView(newPro: $newPro, newCon: $newCon, proConList: proConList)
+                   }
                 }.padding()
             }
             .navigationBarTitle("Todo for Sue")
@@ -42,3 +63,4 @@ struct ContentView: View {
         }
     }
 }
+
