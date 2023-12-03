@@ -71,14 +71,14 @@ struct ContentView: View {
                     Button(action: {
                        showingAddDesireHappenView.toggle()
                    }) {
-                       Image(systemName: "list.bullet")
+                       Image(systemName: "heart.slash")
                    }
                    .sheet(isPresented: $showingAddDesireHappenView) {
                        AddDesireHappenView(newDesire: $newDesire, newHappen: $newHappen, desireList: desireList)
                    }
                 }.padding()
             }
-            .navigationBarTitle("My BPD Journal")
+            .navigationBarTitle("My BPD Journal ❤️‍🩹")
             .background(Color(UIColor.systemGray6))
         }
     }
