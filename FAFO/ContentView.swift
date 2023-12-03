@@ -10,43 +10,35 @@ import SwiftUI
 struct ContentView: View {
     @State private var newTaskName = ""
     @ObservedObject var taskList = TaskList()
+    @State private var showingAddTaskView = false
+    @State private var selectedTask: Task?
 
     var body: some View {
         NavigationView {
             VStack {
-                if taskList.tasks.isEmpty {
-                    Spacer()
-                    Text("No tasks yet. Add a new task!")
-                        .foregroundColor(.gray)
-                        .padding()
-                    Spacer()
-                } else {
-                    List {
-                        ForEach(taskList.tasks) { task in
+                List {
+                    ForEach(taskList.tasks) { task in
+                        NavigationLink(destination: AddTaskView(newTaskName: $newTaskName, taskList: taskList, selectedTask: task)) {
                             Text(task.name)
                         }
-                        .onDelete(perform: taskList.handleRemoveTask)
                     }
+                    .onDelete(perform: taskList.handleRemoveTask)
                 }
-
+            
                 HStack {
-                    TextField("New todo", text: $newTaskName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-
                     Button(action: {
-                        taskList.handleAddTask(name: newTaskName)
-                        newTaskName = ""
+                        showingAddTaskView.toggle()
+                        selectedTask = nil
                     }) {
-                        Image(systemName: "plus.circle.fill")
+                        Image(systemName: "square.and.pencil")
+                    }
+                    .sheet(isPresented: $showingAddTaskView) {
+                        AddTaskView(newTaskName: $newTaskName, taskList: taskList, selectedTask: nil)
                     }
                 }.padding()
             }
-            .navigationBarTitle("Todo for You")
+            .navigationBarTitle("Todo for Sue")
             .background(Color(UIColor.systemGray6))
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

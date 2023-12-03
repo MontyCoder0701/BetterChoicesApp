@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		327C16912B1C8ECA00E9667E /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16902B1C8ECA00E9667E /* AddTaskView.swift */; };
 		32F7FE852B12FB4B00F9722C /* FAFOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FE842B12FB4B00F9722C /* FAFOApp.swift */; };
 		32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FE862B12FB4B00F9722C /* ContentView.swift */; };
 		32F7FE892B12FB4C00F9722C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FE882B12FB4C00F9722C /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		327C16902B1C8ECA00E9667E /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		32F7FE812B12FB4B00F9722C /* FAFO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FAFO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F7FE842B12FB4B00F9722C /* FAFOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOApp.swift; sourceTree = "<group>"; };
 		32F7FE862B12FB4B00F9722C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				32F7FEB62B13035200F9722C /* Task.swift */,
 				32F7FEB82B13039A00F9722C /* TaskList.swift */,
 				32F7FE842B12FB4B00F9722C /* FAFOApp.swift */,
+				327C16902B1C8ECA00E9667E /* AddTaskView.swift */,
 				32F7FE862B12FB4B00F9722C /* ContentView.swift */,
 				32F7FE882B12FB4C00F9722C /* Assets.xcassets */,
 				32F7FE8A2B12FB4C00F9722C /* Preview Content */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F7FEB92B13039A00F9722C /* TaskList.swift in Sources */,
+				327C16912B1C8ECA00E9667E /* AddTaskView.swift in Sources */,
 				32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */,
 				32F7FEB72B13035200F9722C /* Task.swift in Sources */,
 				32F7FE852B12FB4B00F9722C /* FAFOApp.swift in Sources */,

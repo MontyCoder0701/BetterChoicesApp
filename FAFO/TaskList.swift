@@ -38,6 +38,15 @@ class TaskList: ObservableObject {
             print("Error encoding tasks")
         }
     }
+    
+    func updateTask(task: Task, newName: String) {
+        guard let index = tasks.firstIndex(where: { $0.id == task.id }) else {
+            return
+        }
+
+        tasks[index].name = newName
+        saveTasks()
+    }
 
     
     private func setupTasks() {
