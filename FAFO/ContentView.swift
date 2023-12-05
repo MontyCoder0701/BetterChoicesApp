@@ -25,6 +25,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+            Spacer(minLength: 30)
+                
+            Text("My BPD Journal")
+                .font(.title)
+                .bold()
+                
                 List {
                     ForEach(taskList.tasks) { task in
                         NavigationLink(destination: AddTaskView(newTaskName: $newTaskName, taskList: taskList, selectedTask: task)) {
@@ -72,7 +78,6 @@ struct ContentView: View {
                    }
                 }.padding()
             }
-            .navigationBarTitle("My BPD Journal")
             .background(Color(UIColor.systemGray6))
         }
     }
