@@ -28,11 +28,10 @@ struct AddProConView: View {
                     .bold()
                     .padding()
                 
+                Divider().background(Color(UIColor.systemGray6))
+                
                 TextEditor(text: $newTitle)
                     .frame(minHeight: 200)
-                    .padding()
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(8)
                     .onTapGesture {
                         hideKeyboard()
                     }
@@ -42,11 +41,10 @@ struct AddProConView: View {
                     .bold()
                     .padding()
                 
+                Divider().background(Color(UIColor.systemGray6))
+                
                 TextEditor(text: $newPro)
                     .frame(minHeight: 200)
-                    .padding()
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(8)
                     .onTapGesture {
                         hideKeyboard()
                     }
@@ -56,11 +54,10 @@ struct AddProConView: View {
                     .bold()
                     .padding()
                 
+                Divider().background(Color(UIColor.systemGray6))
+                
                 TextEditor(text: $newCon)
                     .frame(minHeight: 200)
-                    .padding()
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(8)
                     .onTapGesture {
                         hideKeyboard()
                     }

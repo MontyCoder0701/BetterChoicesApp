@@ -23,11 +23,10 @@ struct AddTaskView: View {
                 .bold()
                 .padding()
             
+            Divider().background(Color(UIColor.systemGray6))
+            
             TextEditor(text: $newTaskName)
                 .frame(minHeight: 100)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(8)
                 .onTapGesture {
                     hideKeyboard()
                 }
@@ -35,6 +34,7 @@ struct AddTaskView: View {
                     newTaskName = selectedTask?.name ?? ""
                 }
         }
+        .padding()
         .navigationBarTitle(selectedTask != nil ? "Edit Entry" : "")
         .onDisappear{
             if let task = selectedTask {
