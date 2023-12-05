@@ -17,14 +17,20 @@ struct AddTaskView: View {
     var body: some View {
         VStack {
             Spacer()
+            
             Text("Journal")
                 .font(.headline)
                 .bold()
+                .padding()
+            
             TextEditor(text: $newTaskName)
                 .frame(minHeight: 100)
                 .padding()
                 .background(Color(UIColor.systemGray6))
                 .cornerRadius(8)
+                .onTapGesture {
+                    hideKeyboard()
+                }
                 .onAppear {
                     newTaskName = selectedTask?.name ?? ""
                 }
@@ -45,5 +51,9 @@ struct AddTaskView: View {
             }
         })
         .navigationBarHidden(true)
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

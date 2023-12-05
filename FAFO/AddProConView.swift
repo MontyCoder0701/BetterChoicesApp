@@ -19,59 +19,86 @@ struct AddProConView: View {
     var selectedProCon: ProCon?
 
     var body: some View {
-        VStack {
-            Spacer()
-            Text("Impulse")
-                .font(.headline)
-                .bold()
-            TextEditor(text: $newTitle)
-                .frame(minHeight: 100)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(8)
-            
-            Text("Pros")
-                .font(.headline)
-                .bold()
-            TextEditor(text: $newPro)
-                .frame(minHeight: 100)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(8)
+        ScrollView {
+            VStack {
+                Spacer()
+                
+                Text("Impulse")
+                    .font(.headline)
+                    .bold()
+                    .padding()
+                
+                TextEditor(text: $newTitle)
+                    .frame(minHeight: 200)
+                    .padding()
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(8)
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
+                
+                Text("Pros")
+                    .font(.headline)
+                    .bold()
+                    .padding()
+                
+                TextEditor(text: $newPro)
+                    .frame(minHeight: 200)
+                    .padding()
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(8)
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
 
-            Text("Cons")
-                .font(.headline)
-                .bold()
-            TextEditor(text: $newCon)
-                .frame(minHeight: 100)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(8)
-        }
-        .onAppear {
-            if let selectedProCon = selectedProCon {
-                newTitle = selectedProCon.title
-                newPro = selectedProCon.pro
-                newCon = selectedProCon.con
+                Text("Cons")
+                    .font(.headline)
+                    .bold()
+                    .padding()
+                
+                TextEditor(text: $newCon)
+                    .frame(minHeight: 200)
+                    .padding()
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(8)
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
             }
-        }
-        .onDisappear {
-            if let selectedProCon = selectedProCon {
-                proConList.handleUpdateProCon(selectedProCon, newTitle: newTitle, newPro: newPro, newCon: newCon)
-            } else {
-                proConList.addProCon(title: newTitle, pro: newPro, con: newCon)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .onAppear {
+                if let selectedProCon = selectedProCon {
+                    newTitle = selectedProCon.title
+                    newPro = selectedProCon.pro
+                    newCon = selectedProCon.con
+                }
             }
-            
-            newTitle = ""
-            newPro = ""
-            newCon = ""
-            presentationMode.wrappedValue.dismiss()
-        }
-        .gesture(DragGesture().onEnded { value in
-            if value.translation.width > 50 {
+            .onDisappear {
+                if let selectedProCon = selectedProCon {
+                    proConList.handleUpdateProCon(selectedProCon, newTitle: newTitle, newPro: newPro, newCon: newCon)
+                } else {
+                    proConList.addProCon(title: newTitle, pro: newPro, con: newCon)
+                }
+                
+                newTitle = ""
+                newPro = ""
+                newCon = ""
                 presentationMode.wrappedValue.dismiss()
             }
-        })
-        .navigationBarHidden(true)
+            .gesture(DragGesture().onEnded { value in
+                if value.translation.width > 50 {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            })
+            .navigationBarHidden(true)
+            .onTapGesture {
+                hideKeyboard()
+            }
+        }
+    }
+
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

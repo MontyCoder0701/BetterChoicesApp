@@ -18,11 +18,13 @@ struct FpTipsView: View {
             Text("FP Tips")
                 .font(.headline)
                 .bold()
-            
+                .padding()
+                        
             List {
-                Text("1. Do not give someone the unwanted reigns of your emotions.")
-                Text("2. Stop sharing your every personal detail.")
+                Text("1. Do not give someone the reigns of your emotions.")
+                Text("2. Stop sharing your every personal detail, everyday.")
                 Text("3. Balance the amount of time you spend with each person.")
+                Text("4. Read a good book.")
             }
             .listStyle(InsetListStyle())
             .padding(.horizontal)
