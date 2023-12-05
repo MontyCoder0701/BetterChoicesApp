@@ -22,6 +22,8 @@ struct SummaryRowView: View {
     var body: some View {
         HStack {
             Text(text)
+                .lineLimit(1)
+                .truncationMode(.tail)
             Spacer()
             Text(formattedDate)
                 .foregroundColor(.secondary)
