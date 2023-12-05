@@ -19,7 +19,7 @@ class TaskList: ObservableObject {
             return;
         }
         
-        let task = Task(name: name)
+        let task = Task(name: name, date: Date())
         tasks.append(task)
         saveTasks()
     }

@@ -8,72 +8,52 @@
 import Foundation
 
 class ProConList: ObservableObject {
-    @Published var pros: [String] = []
-    @Published var cons: [String] = []
-    @Published var prosAndCons: [String] = []
+    @Published var proCons: [ProCon] = []
 
-    init() {
-        loadProConList()
-    }
-
-    func addProCon(pro: String, con: String) {
-        if (pro.isEmpty && con.isEmpty) {
-            return;
-        }
-        
-        pros.append(pro)
-        cons.append(con)
-        
-        let combinedString = formatProConString(pro: pro, con: con)
-        prosAndCons.append(combinedString)
-        
-        saveProConList()
-    }
-    
-    func handleRemoveProCon(at index: IndexSet) {
-        pros.remove(atOffsets: index)
-        cons.remove(atOffsets: index)
-        prosAndCons.remove(atOffsets: index)
-        
-        saveProConList()
-    }
-    
-    func handleUpdateProCon(_ oldProCon: String, newPro: String, newCon: String) {
-        guard let index = prosAndCons.firstIndex(of: oldProCon) else {
-            return
+        init() {
+            loadProConList()
         }
 
-        prosAndCons.remove(at: index)
+        func addProCon(title: String, pro: String, con: String) {
+            if (title.isEmpty && pro.isEmpty && con.isEmpty) {
+                return
+            }
+
+            let newProCon = ProCon(title: title, pro: pro, con: con, date:Date())
+            proCons.append(newProCon)
+            
+            saveProConList()
+        }
         
-        let updatedProCon = formatProConString(pro: newPro, con: newCon)
-        prosAndCons.insert(updatedProCon, at: index)
+        func handleRemoveProCon(at index: IndexSet) {
+            proCons.remove(atOffsets: index)
+            
+            saveProConList()
+        }
         
-        saveProConList()
-    }
+        func handleUpdateProCon(_ oldProCon: ProCon, newTitle: String, newPro: String, newCon: String) {
+            guard let index = proCons.firstIndex(where: { $0.id == oldProCon.id }) else {
+                return
+            }
 
-    private func saveProConList() {
-        let defaults = UserDefaults.standard
-        defaults.set(pros, forKey: "ProsKey")
-        defaults.set(cons, forKey: "ConsKey")
-        defaults.set(prosAndCons, forKey: "ProsAndConsKey")
-    }
-
-    private func loadProConList() {
-        let defaults = UserDefaults.standard
-        if let loadedPros = defaults.stringArray(forKey: "ProsKey") {
-            pros = loadedPros
+            proCons[index].title = newTitle
+            proCons[index].pro = newPro
+            proCons[index].con = newCon
+            
+            saveProConList()
         }
 
-        if let loadedCons = defaults.stringArray(forKey: "ConsKey") {
-            cons = loadedCons
+        private func saveProConList() {
+            let defaults = UserDefaults.standard
+            let proConsData = try? JSONEncoder().encode(proCons)
+            defaults.set(proConsData, forKey: "ProConsKey")
         }
 
-        if let loadedProsAndCons = defaults.stringArray(forKey: "ProsAndConsKey") {
-            prosAndCons = loadedProsAndCons
+        private func loadProConList() {
+            let defaults = UserDefaults.standard
+            if let proConsData = defaults.data(forKey: "ProConsKey") {
+                let loadedProCons = try? JSONDecoder().decode([ProCon].self, from: proConsData)
+                proCons = loadedProCons ?? []
+            }
         }
-    }
-    
-    private func formatProConString(pro: String, con: String) -> String {
-        return "\(pro) - \(con)"
-    }
 }

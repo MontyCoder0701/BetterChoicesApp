@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var newTaskName = ""
+    @State private var newTitle = ""
     @State private var newPro = ""
     @State private var newCon = ""
     
@@ -17,6 +18,7 @@ struct ContentView: View {
     
     @State private var showingAddTaskView = false
     @State private var showingAddProConView = false
+    @State private var showingFpTipsView = false
     
     @State private var selectedTask: Task?
 
@@ -26,14 +28,14 @@ struct ContentView: View {
                 List {
                     ForEach(taskList.tasks) { task in
                         NavigationLink(destination: AddTaskView(newTaskName: $newTaskName, taskList: taskList, selectedTask: task)) {
-                            SummaryRowView(text: task.name)
+                            SummaryRowView(text: task.name, date: task.date) 
                         }
                     }
                     .onDelete(perform: taskList.handleRemoveTask)
                     
-                    ForEach(proConList.prosAndCons, id: \.self) { proCon in
-                        NavigationLink(destination: AddProConView(newPro: $newPro, newCon: $newCon, proConList: proConList, selectedProCon: proCon)) {
-                            SummaryRowView(text: proCon)
+                    ForEach(proConList.proCons) { proCon in
+                        NavigationLink(destination: AddProConView(newTitle: $newTitle, newPro: $newPro, newCon: $newCon, proConList: proConList, selectedProCon: proCon)) {
+                            SummaryRowView(text: proCon.title, date: proCon.date)
                         }
                     }
                     .onDelete(perform: proConList.handleRemoveProCon)
@@ -57,7 +59,16 @@ struct ContentView: View {
                        Image(systemName: "list.bullet")
                    }
                    .sheet(isPresented: $showingAddProConView) {
-                       AddProConView(newPro: $newPro, newCon: $newCon, proConList: proConList)
+                       AddProConView(newTitle: $newTitle,newPro: $newPro, newCon: $newCon, proConList: proConList)
+                   }
+                    
+                    Button(action: {
+                       showingFpTipsView.toggle()
+                   }) {
+                       Image(systemName: "heart.slash")
+                   }
+                   .sheet(isPresented: $showingFpTipsView) {
+                       FpTipsView()
                    }
                 }.padding()
             }
