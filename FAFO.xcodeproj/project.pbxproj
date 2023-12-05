@@ -51,7 +51,7 @@
 		327C16962B1CBE3200E9667E /* SummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRowView.swift; sourceTree = "<group>"; };
 		327C169C2B1F535A00E9667E /* FpTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FpTipsView.swift; sourceTree = "<group>"; };
 		327C169E2B1F5C4400E9667E /* ProCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCon.swift; sourceTree = "<group>"; };
-		32F7FE812B12FB4B00F9722C /* FAFO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FAFO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32F7FE812B12FB4B00F9722C /* BPD Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BPD Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F7FE842B12FB4B00F9722C /* FAFOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOApp.swift; sourceTree = "<group>"; };
 		32F7FE862B12FB4B00F9722C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32F7FE882B12FB4C00F9722C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		32F7FE822B12FB4B00F9722C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32F7FE812B12FB4B00F9722C /* FAFO.app */,
+				32F7FE812B12FB4B00F9722C /* BPD Journal.app */,
 				32F7FE912B12FB4C00F9722C /* FAFOTests.xctest */,
 				32F7FE9B2B12FB4C00F9722C /* FAFOUITests.xctest */,
 			);
@@ -173,7 +173,7 @@
 			);
 			name = FAFO;
 			productName = FAFO;
-			productReference = 32F7FE812B12FB4B00F9722C /* FAFO.app */;
+			productReference = 32F7FE812B12FB4B00F9722C /* BPD Journal.app */;
 			productType = "com.apple.product-type.application";
 		};
 		32F7FE902B12FB4C00F9722C /* FAFOTests */ = {
@@ -476,7 +476,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SoojeongLee.FAFO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BPD Journal";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,7 +505,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SoojeongLee.FAFO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BPD Journal";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
