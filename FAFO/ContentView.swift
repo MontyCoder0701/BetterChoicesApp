@@ -17,12 +17,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-            Spacer(minLength: 30)
-                
-            Text("Better Choices")
-                .font(.title)
-                .bold()
-                
                 List {
                     ForEach(proConList.proCons) { proCon in
                         NavigationLink(destination: AddProConView(newTitle: $newTitle, newPro: $newPro, newCon: $newCon, proConList: proConList, selectedProCon: proCon)) {
@@ -42,9 +36,10 @@ struct ContentView: View {
                    .sheet(isPresented: $showingAddProConView) {
                        AddProConView(newTitle: $newTitle,newPro: $newPro, newCon: $newCon, proConList: proConList)
                    }
-                }.padding()
+                }
             }
             .background(Color(UIColor.systemGray6))
+            .navigationTitle("Better Choices")
         }
     }
 }

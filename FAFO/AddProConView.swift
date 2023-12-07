@@ -88,10 +88,10 @@ struct AddProConView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             })
-            .navigationBarHidden(true)
             .onTapGesture {
                 hideKeyboard()
             }
+            .navigationTitle("My Record")
         }
     }
 
