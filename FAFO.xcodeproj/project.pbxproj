@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		327C16912B1C8ECA00E9667E /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16902B1C8ECA00E9667E /* AddTaskView.swift */; };
 		327C16932B1C9B1200E9667E /* AddProConView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16922B1C9B1200E9667E /* AddProConView.swift */; };
 		327C16952B1C9B5100E9667E /* ProConList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16942B1C9B5100E9667E /* ProConList.swift */; };
 		327C16972B1CBE3200E9667E /* SummaryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16962B1CBE3200E9667E /* SummaryRowView.swift */; };
-		327C169D2B1F535A00E9667E /* FpTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C169C2B1F535A00E9667E /* FpTipsView.swift */; };
 		327C169F2B1F5C4400E9667E /* ProCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C169E2B1F5C4400E9667E /* ProCon.swift */; };
 		32F7FE852B12FB4B00F9722C /* FAFOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FE842B12FB4B00F9722C /* FAFOApp.swift */; };
 		32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FE862B12FB4B00F9722C /* ContentView.swift */; };
@@ -23,8 +21,6 @@
 		32F7FEB32B12FBFD00F9722C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FEB22B12FBFD00F9722C /* .gitignore */; };
 		32F7FEB42B12FBFD00F9722C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FEB22B12FBFD00F9722C /* .gitignore */; };
 		32F7FEB52B12FBFD00F9722C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FEB22B12FBFD00F9722C /* .gitignore */; };
-		32F7FEB72B13035200F9722C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FEB62B13035200F9722C /* Task.swift */; };
-		32F7FEB92B13039A00F9722C /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FEB82B13039A00F9722C /* TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		327C16902B1C8ECA00E9667E /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		327C16922B1C9B1200E9667E /* AddProConView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProConView.swift; sourceTree = "<group>"; };
 		327C16942B1C9B5100E9667E /* ProConList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProConList.swift; sourceTree = "<group>"; };
 		327C16962B1CBE3200E9667E /* SummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRowView.swift; sourceTree = "<group>"; };
-		327C169C2B1F535A00E9667E /* FpTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FpTipsView.swift; sourceTree = "<group>"; };
 		327C169E2B1F5C4400E9667E /* ProCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCon.swift; sourceTree = "<group>"; };
 		32F7FE812B12FB4B00F9722C /* BPD Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BPD Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F7FE842B12FB4B00F9722C /* FAFOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOApp.swift; sourceTree = "<group>"; };
@@ -62,8 +56,6 @@
 		32F7FE9F2B12FB4C00F9722C /* FAFOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOUITests.swift; sourceTree = "<group>"; };
 		32F7FEA12B12FB4C00F9722C /* FAFOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32F7FEB22B12FBFD00F9722C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		32F7FEB62B13035200F9722C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		32F7FEB82B13039A00F9722C /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,16 +107,12 @@
 		32F7FE832B12FB4B00F9722C /* FAFO */ = {
 			isa = PBXGroup;
 			children = (
-				32F7FEB62B13035200F9722C /* Task.swift */,
 				327C16962B1CBE3200E9667E /* SummaryRowView.swift */,
-				32F7FEB82B13039A00F9722C /* TaskList.swift */,
 				32F7FE842B12FB4B00F9722C /* FAFOApp.swift */,
 				327C16922B1C9B1200E9667E /* AddProConView.swift */,
 				327C16942B1C9B5100E9667E /* ProConList.swift */,
 				327C169E2B1F5C4400E9667E /* ProCon.swift */,
-				327C16902B1C8ECA00E9667E /* AddTaskView.swift */,
 				32F7FE862B12FB4B00F9722C /* ContentView.swift */,
-				327C169C2B1F535A00E9667E /* FpTipsView.swift */,
 				32F7FE882B12FB4C00F9722C /* Assets.xcassets */,
 				32F7FE8A2B12FB4C00F9722C /* Preview Content */,
 			);
@@ -290,15 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				327C16972B1CBE3200E9667E /* SummaryRowView.swift in Sources */,
-				32F7FEB92B13039A00F9722C /* TaskList.swift in Sources */,
 				327C169F2B1F5C4400E9667E /* ProCon.swift in Sources */,
-				327C16912B1C8ECA00E9667E /* AddTaskView.swift in Sources */,
 				327C16952B1C9B5100E9667E /* ProConList.swift in Sources */,
 				32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */,
 				327C16932B1C9B1200E9667E /* AddProConView.swift in Sources */,
-				32F7FEB72B13035200F9722C /* Task.swift in Sources */,
 				32F7FE852B12FB4B00F9722C /* FAFOApp.swift in Sources */,
-				327C169D2B1F535A00E9667E /* FpTipsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

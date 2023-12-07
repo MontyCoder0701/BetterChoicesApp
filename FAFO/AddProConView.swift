@@ -31,7 +31,7 @@ struct AddProConView: View {
                 Divider().background(Color(UIColor.systemGray6))
                 
                 TextEditor(text: $newTitle)
-                    .frame(minHeight: 200)
+                    .frame(minHeight: 75)
                     .onTapGesture {
                         hideKeyboard()
                     }
@@ -44,7 +44,7 @@ struct AddProConView: View {
                 Divider().background(Color(UIColor.systemGray6))
                 
                 TextEditor(text: $newPro)
-                    .frame(minHeight: 200)
+                    .frame(minHeight: 150)
                     .onTapGesture {
                         hideKeyboard()
                     }
@@ -57,7 +57,7 @@ struct AddProConView: View {
                 Divider().background(Color(UIColor.systemGray6))
                 
                 TextEditor(text: $newCon)
-                    .frame(minHeight: 200)
+                    .frame(minHeight: 150)
                     .onTapGesture {
                         hideKeyboard()
                     }
