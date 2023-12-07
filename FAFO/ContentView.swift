@@ -11,8 +11,12 @@ struct ContentView: View {
     @State private var newTitle = ""
     @State private var newPro = ""
     @State private var newCon = ""
+    @State private var memo = Memo(text: "")
+
     @ObservedObject var proConList = ProConList()
+    
     @State private var showingAddProConView = false
+    @State private var showingMemoView = false
     
     var body: some View {
         NavigationView {
@@ -24,6 +28,7 @@ struct ContentView: View {
                         }
                     }
                     .onDelete(perform: proConList.handleRemoveProCon)
+        
                 }
             
             
@@ -35,6 +40,15 @@ struct ContentView: View {
                    }
                    .sheet(isPresented: $showingAddProConView) {
                        AddProConView(newTitle: $newTitle,newPro: $newPro, newCon: $newCon, proConList: proConList)
+                   }
+                    
+                    Button(action: {
+                       showingMemoView.toggle()
+                   }) {
+                       Image(systemName: "note.text")
+                   }
+                   .sheet(isPresented: $showingMemoView) {
+                       MemoView(memo: $memo)
                    }
                 }
             }

@@ -11,6 +11,8 @@
 		327C16952B1C9B5100E9667E /* ProConList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16942B1C9B5100E9667E /* ProConList.swift */; };
 		327C16972B1CBE3200E9667E /* SummaryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C16962B1CBE3200E9667E /* SummaryRowView.swift */; };
 		327C169F2B1F5C4400E9667E /* ProCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C169E2B1F5C4400E9667E /* ProCon.swift */; };
+		32928C122B21EEDF002C94F4 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928C112B21EEDF002C94F4 /* MemoView.swift */; };
+		32928C142B21F01D002C94F4 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928C132B21F01D002C94F4 /* Memo.swift */; };
 		32F7FE852B12FB4B00F9722C /* FAFOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FE842B12FB4B00F9722C /* FAFOApp.swift */; };
 		32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F7FE862B12FB4B00F9722C /* ContentView.swift */; };
 		32F7FE892B12FB4C00F9722C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F7FE882B12FB4C00F9722C /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		327C16942B1C9B5100E9667E /* ProConList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProConList.swift; sourceTree = "<group>"; };
 		327C16962B1CBE3200E9667E /* SummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRowView.swift; sourceTree = "<group>"; };
 		327C169E2B1F5C4400E9667E /* ProCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCon.swift; sourceTree = "<group>"; };
+		32928C112B21EEDF002C94F4 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
+		32928C132B21F01D002C94F4 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		32F7FE812B12FB4B00F9722C /* BPD Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BPD Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F7FE842B12FB4B00F9722C /* FAFOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFOApp.swift; sourceTree = "<group>"; };
 		32F7FE862B12FB4B00F9722C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,7 +114,9 @@
 				327C16962B1CBE3200E9667E /* SummaryRowView.swift */,
 				32F7FE842B12FB4B00F9722C /* FAFOApp.swift */,
 				327C16922B1C9B1200E9667E /* AddProConView.swift */,
+				32928C112B21EEDF002C94F4 /* MemoView.swift */,
 				327C16942B1C9B5100E9667E /* ProConList.swift */,
+				32928C132B21F01D002C94F4 /* Memo.swift */,
 				327C169E2B1F5C4400E9667E /* ProCon.swift */,
 				32F7FE862B12FB4B00F9722C /* ContentView.swift */,
 				32F7FE882B12FB4C00F9722C /* Assets.xcassets */,
@@ -277,8 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32928C122B21EEDF002C94F4 /* MemoView.swift in Sources */,
 				327C16972B1CBE3200E9667E /* SummaryRowView.swift in Sources */,
 				327C169F2B1F5C4400E9667E /* ProCon.swift in Sources */,
+				32928C142B21F01D002C94F4 /* Memo.swift in Sources */,
 				327C16952B1C9B5100E9667E /* ProConList.swift in Sources */,
 				32F7FE872B12FB4B00F9722C /* ContentView.swift in Sources */,
 				327C16932B1C9B1200E9667E /* AddProConView.swift in Sources */,
