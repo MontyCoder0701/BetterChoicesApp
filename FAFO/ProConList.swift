@@ -19,7 +19,7 @@ class ProConList: ObservableObject {
                 return
             }
 
-            let newProCon = ProCon(title: title, pro: pro, con: con, date:Date())
+            let newProCon = ProCon(title: title, pro: pro, con: con, date:Date(), like: 0)
             proCons.append(newProCon)
             
             saveProConList()
@@ -27,10 +27,20 @@ class ProConList: ObservableObject {
         
         func handleRemoveProCon(at index: IndexSet) {
             proCons.remove(atOffsets: index)
-            
+
             saveProConList()
         }
         
+        func handleLikeProCon(for proCon: ProCon) {
+            guard let index = proCons.firstIndex(where: { $0.id == proCon.id }) else {
+                return
+            }
+            
+            proCons[index].like += 1
+            saveProConList()
+        }
+
+
         func handleUpdateProCon(_ oldProCon: ProCon, newTitle: String, newPro: String, newCon: String) {
             guard let index = proCons.firstIndex(where: { $0.id == oldProCon.id }) else {
                 return

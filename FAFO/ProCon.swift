@@ -13,4 +13,5 @@ struct ProCon: Identifiable, Codable {
     var pro: String
     var con: String
     var date: Date
+    var like: Int
 }

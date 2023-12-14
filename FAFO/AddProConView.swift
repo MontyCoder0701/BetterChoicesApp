@@ -92,6 +92,19 @@ struct AddProConView: View {
                 hideKeyboard()
             }
             .navigationTitle("My Record")
+            .navigationBarItems(
+            trailing:
+                HStack {
+                    if let selectedProCon = selectedProCon {
+                        Button(action: {
+                            proConList.handleLikeProCon(for: selectedProCon)
+                        }) {
+                            Image(systemName: "heart.fill")
+                        }
+                        Text("\(selectedProCon.like)")
+                    }
+                }
+            )
         }
     }
 
