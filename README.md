@@ -7,6 +7,12 @@ Each Impulse record can be viewed and edited freely!
   <img src="https://github.com/MontyCoder0701/BetterChoicesApp/assets/104475739/77fd22c0-9834-4d32-889f-59ba6556e991" width="200" >
 </p>
 
+## Disclaimer 
+For security reasons and personal data protection (regarding the nature of this app),  
+I will not be saving any data in any form of external database.  
+This means all data is saved in the local storage of the device.  
+If the app is deleted, all data cannot be recovered.  
+
 ## Features
 ### Add an Impulse
 <p align="center">
